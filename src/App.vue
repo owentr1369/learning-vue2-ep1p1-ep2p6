@@ -1,12 +1,26 @@
 <template>
   <div id="app">
     <h1>Hello</h1>
+    <div id="obj">
+      <p>{{ showPost() }}</p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "App",
+  data() {
+    return {
+      noidung: "Chao cac ban",
+      title: "Blablablabla",
+    };
+  },
+  methods: {
+    showPost: function () {
+      return this.title;
+    },
+  },
 };
 </script>
 
