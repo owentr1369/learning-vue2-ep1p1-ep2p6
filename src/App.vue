@@ -2,7 +2,9 @@
   <div id="app">
     <h1>Hello</h1>
     <div id="obj">
-      <p>{{ showPost() }}</p>
+      <p>{{ something.title }}</p>
+      <p v-once>{{ something.noidung }} - {{ showPost() }}</p>
+      <a v-bind:href="something.link">Hello</a>
     </div>
   </div>
 </template>
@@ -12,13 +14,17 @@ export default {
   name: "App",
   data() {
     return {
-      noidung: "Chao cac ban",
-      title: "Blablablabla",
+      something: {
+        noidung: "Chao cac ban",
+        title: "Blablablabla",
+        link: "https://facebook.com",
+      },
     };
   },
   methods: {
     showPost: function () {
-      return this.title;
+      this.noidung = "Noi dung moi duoc cap nhat";
+      return this.noidung;
     },
   },
 };
