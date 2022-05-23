@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Hello</h1>
     <div id="obj">
-      <p>{{ something.title }}</p>
+      <p v-html="something.textMaHTML"></p>
       <p v-once>{{ something.noidung }} - {{ showPost() }}</p>
       <a v-bind:href="something.link">Hello</a>
     </div>
@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  // Tat ca du lieu truyen qua html deu o da du lieu tho
   name: "App",
   data() {
     return {
@@ -18,6 +19,7 @@ export default {
         noidung: "Chao cac ban",
         title: "Blablablabla",
         link: "https://facebook.com",
+        textMaHTML: '<a href="https....awdasd">Get password</a>',
       },
     };
   },
